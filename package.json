@@ -1,0 +1,30 @@
+{
+  "name": "aiyox",
+  "version": "1.0.0",
+  "main": "dist/bundle.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode=development",
+    "release": "webpack --mode=production",
+    "dev": "nodemon  dist/bundle.js"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "@types/start-server-webpack-plugin": "^2.2.2",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-env": "^1.18.0",
+    "@types/webpack-node-externals": "^3.0.0",
+    "start-server-webpack-plugin": "^2.2.5",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
+    "webpack-cli": "^5.0.1",
+    "webpack-node-externals": "^3.0.0",
+    "webpack-shell-plugin-next": "^2.3.1"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.17",
+    "express": "^4.18.2"
+  }
+}

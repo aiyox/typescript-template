@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./server",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "target": "ES6",
+    "module": "ES6",
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "inlineSources": false,
+    "lib": ["ES6", "ES5"]
+  },
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}
