@@ -5,15 +5,16 @@ import WebpackShellPluginNext from 'webpack-shell-plugin-next'; // build 自动�
 const { NODE_ENV = 'development' } = process.env;
 let plugins = [];
 
-plugins.push(
-  new WebpackShellPluginNext({
-    onBuildEnd: {
-      scripts: ['yarn dev'],
-      blocking: false,
-      parallel: true,
-    },
-  })
-);
+plugins
+  .push
+  // new WebpackShellPluginNext({
+  //   onBuildEnd: {
+  //     scripts: ['yarn dev'],
+  //     blocking: false,
+  //     parallel: true,
+  //   },
+  // })
+  ();
 
 const config = {
   entry: './server/server.ts',
@@ -23,14 +24,20 @@ const config = {
     outputModule: true,
   },
   externals: [
-    webpackNodeExternals({
-      importType: 'module', // 这个模块要指定使用esm
-    }),
+    // 'express',
+    // webpackNodeExternals({
+    //   importType: 'module', // 这个模块要指定使用esm
+    // }),
   ],
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.mjs',
     path: path.resolve(process.cwd(), 'dist'),
+    library: {
+      type: 'module',
+    },
+    chunkLoading: 'import',
     chunkFormat: 'module',
+    clean: true,
   },
 
   watch: NODE_ENV === 'development',
@@ -47,6 +54,7 @@ const config = {
   resolve: {
     extensions: ['.ts', '.js'],
   },
+  optimization: {},
 };
 
 export default config;

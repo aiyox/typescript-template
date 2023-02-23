@@ -15,5 +15,8 @@
     "inlineSources": false,
     "lib": ["ES6", "ES5"]
   },
+  "ts-node": {
+    "esm": true
+  },
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
